@@ -86,7 +86,7 @@ add_id_features(dataset="train") %>%
 
 	# train model
 	cat("==> Train model\n")
-	model <<- xgb.train(param=param, data=.$dtrain, nrounds=20L, # 2875L,
+	model <<- xgb.train(param=param, data=.$dtrain, nrounds=2875L,
 						print.every.n = 20L,
 						watchlist=list(train=.$dtrain, valid=.$dvalid))
 
