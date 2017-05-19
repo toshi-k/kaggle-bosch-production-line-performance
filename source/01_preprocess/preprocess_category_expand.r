@@ -56,7 +56,8 @@ tic <- proc.time()
 # train data ----------
 
 train_categorical <- fread(file.path(data_dir, "train_categorical.csv"), data.table=FALSE,
-							na.strings="", showProgress=TRUE, colClasses=colClasses, drop="Id")
+							na.strings="", showProgress=TRUE, colClasses=colClasses)
+train_categorical$Id <- NULL
 
 print("==> Replace NA")
 for(i in seq_along(train_categorical)){
